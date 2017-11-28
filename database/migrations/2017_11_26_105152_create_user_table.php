@@ -13,7 +13,15 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        //
+        // Create the table
+		Schema::create('users', function($table){
+			$table->string('id');
+			$table->string('name');
+			$table->string('eye_color');
+			$table->string('age');
+			$table->string('is_active');
+			$table->timestamps();
+		});
     }
 
     /**
