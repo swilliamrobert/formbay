@@ -2,15 +2,22 @@
 
 Please follow the guide.
 
+Development Setup.
+
 1. `git clone`
-2. `cd my-site`
-3. `composer install`
+2. `sudo groupadd docker`
+3. `sudo gpasswd -a $USER docker`
 4. `sudo chmod -R 777 ./storage ./bootstrap ./database`
-5. `sudo docker-compose up -d`
-6. `sudo docker-compose exec app php artisan key:generate`
-7. `sudo docker-compose exec app php artisan migrate`
-8. `sudo docker-compose exec app php artisan db:seed`
-9. `sudo docker-compose exec app php artisan serve`
+5. `docker-compose build`
+6. `docker-compose up -d`
+
+Application Setup
+
+1. `composer install`
+2. `docker-compose exec app php artisan key:generate`
+3. `docker-compose exec app php artisan migrate`
+4. `docker-compose exec app php artisan db:seed`
+5. `docker-compose exec app php artisan serve`
 
 Use postman or browser to call the below API
 ```
